@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Through
+  - Enemy
+  - Ground
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -44,4 +47,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Entity
+    uniqueID: 295412585
     locked: 0

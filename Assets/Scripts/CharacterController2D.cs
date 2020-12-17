@@ -29,6 +29,11 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
+	
+	public int cherries = 0;
+	
+	//private void OnTriggerEnter2D(Collider2D collision)
+	
 
 	private void Awake()
 	{
@@ -143,4 +148,22 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+	
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if(other.gameObject.tag == "Enemy")
+		{
+			Destroy(other.gameObject);
+		}
+	}
+	
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.tag == "Collectable")
+		{
+			Destroy(collision.gameObject);
+			cherries += 1;
+		}
+	}
+	
 }
